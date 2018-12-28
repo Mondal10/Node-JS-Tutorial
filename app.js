@@ -75,20 +75,25 @@
 
 /**
  * Read & Write files using 'fs'
+ * 
  */
 
-const fs = require('fs');
+// const fs = require('fs');
 
-// synchronous file reading & writing (blocking code)
+/* synchronous file reading & writing (blocking code) */
 // let readData = fs.readFileSync('textfile.txt','utf8');
 // console.log(readData);
 // fs.writeFileSync('hello.txt','hello');
 // console.log("this line gets executed after file gets loaded, because we used sync");
 
-// asynchronous file reading & writing (doesn't block code the code and let rest of the code execute)
-let readDataA = fs.readFile('textfile.txt', 'utf8', (err,data)=>{
-    console.log(data);
-    fs.writeFile('hello.txt','hey there i wrote this file!!!');
-});
+/* asynchronous file reading & writing (doesn't block code the code and let rest of the code execute) */
+// let readDataA = fs.readFile('textfile.txt', 'utf8', (err,data)=>{
+//     console.log(data);
+//     fs.writeFile('hello.txt','hey there i wrote this file!!!',()=>{});
+// });
 
-console.log("this line gets executed, since file is not loaded yet");
+// console.log("this line gets executed, since file is not loaded yet");
+
+/**
+ * 
+ */
