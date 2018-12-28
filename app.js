@@ -132,3 +132,17 @@
 // server.listen(8080);
 // /* setting localhost:8080 as a port where request will be responded or in simple words server will be lsitening to the port 8080*/
 // console.log("started");
+
+/**
+ * Reading Stream Data in chunks
+ */
+
+// const fs = require('fs');
+
+// let readStreamData = fs.createReadStream(__dirname + '/sample.txt','utf8');
+// /* If we don't use utf8 it will return hex codes */
+
+// readStreamData.on('data', (chunk) => {
+//     console.log('new chunk recieved:::::::::::::');
+//     console.log(chunk);
+// });
