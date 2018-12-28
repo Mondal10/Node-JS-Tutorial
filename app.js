@@ -148,3 +148,21 @@
 //     // console.log(chunk);
 //     writeStreamData.write(chunk);
 // });
+
+/**
+ * Using pipes
+ */
+
+// const http = require('http');
+// const fs = require('fs');
+// const server = http.createServer((req,res) => {
+//     console.log(`URL of the page: ${req.url}`);
+//     /* 200 is status code, content-type can be : JSON,HTML,text, etc */
+//     let readStreamData = fs.createReadStream(__dirname + '/sample.txt','utf8');
+//     /* If we don't use utf8 it will return hex codes */
+//     res.writeHead(200, {'Content-Type' : 'text/plain'});
+//     readStreamData.pipe(res);
+// });
+// server.listen(8080);
+// /* setting localhost:8080 as a port where request will be responded or in simple words server will be lsitening to the port 8080*/
+// console.log("started");
