@@ -78,7 +78,7 @@
  * 
  */
 
-const fs = require('fs');
+// const fs = require('fs');
 
 /* synchronous file reading & writing (blocking code) */
 // let readData = fs.readFileSync('textfile.txt','utf8');
@@ -117,3 +117,18 @@ const fs = require('fs');
 // fs.unlink('./Amit/Hello.txt',() => {
 //     fs.rmdir('Amit', () => {});  
 // })
+
+/**
+ * Creating http server
+ */
+
+// const http = require('http');
+// const server = http.createServer((req,res) => {
+//     console.log(`URL of the page: ${req.url}`);
+//     /* 200 is status code, content-type can be : JSON,HTML,text, etc */
+//     res.writeHead(200, {'Content-Type' : 'text/plain'});
+//     res.end("Responded to the request"); /* Displayed on screen */
+// });
+// server.listen(8080);
+// /* setting localhost:8080 as a port where request will be responded*/
+// console.log("started");
