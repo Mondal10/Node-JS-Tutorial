@@ -78,7 +78,7 @@
  * 
  */
 
-// const fs = require('fs');
+const fs = require('fs');
 
 /* synchronous file reading & writing (blocking code) */
 // let readData = fs.readFileSync('textfile.txt','utf8');
@@ -95,5 +95,25 @@
 // console.log("this line gets executed, since file is not loaded yet");
 
 /**
+ * Creating & Removing Directories 
  * 
  */
+
+ /* To unlink(Remove files) */
+// fs.unlink('hello.txt',() => {} );
+
+/* To Create a Directory sync and async*/
+// fs.mkdirSync('Amit');
+// fs.mkdir('Amit',() => {
+//     fs.writeFile('./Amit/Hello.txt', 'New file created within Amit directory',() => {});
+// });
+/**
+ *  To Remove a Directory sync and async 
+ * Note: Already removed directory cannot be removed
+ * Also cannot remove a directory if there are some existing contents within, we need to first unlink all of them
+ */
+
+// fs.rmdirSync('Amit');
+// fs.unlink('./Amit/Hello.txt',() => {
+//     fs.rmdir('Amit', () => {});  
+// })
