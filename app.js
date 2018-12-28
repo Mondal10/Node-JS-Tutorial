@@ -130,5 +130,5 @@
 //     res.end("Responded to the request"); /* Displayed on screen */
 // });
 // server.listen(8080);
-// /* setting localhost:8080 as a port where request will be responded*/
+// /* setting localhost:8080 as a port where request will be responded or in simple words server will be lsitening to the port 8080*/
 // console.log("started");
