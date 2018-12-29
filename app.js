@@ -201,9 +201,49 @@
 //         lName: "Mondal",
 //         age: 22
 //     };
-//     /* res.end(myObj); won't return the object as the parameter passed in res.end() must be a string or a buffer */
+//     /* res.end(myObj); won't return the object as the parameter passed in end() must be a string or a buffer */
 //     res.end(JSON.stringify(myObj));
 // });
 // server.listen(8080);
 // /* setting localhost:8080 as a port where request will be responded or in simple words server will be lsitening to the port 8080*/
 // console.log("started");
+
+/**
+ * Basic Routing
+ */
+
+const http = require('http');
+const fs = require('fs');
+const server = http.createServer((req,res) => {
+    console.log(`URL of the page: ${req.url}`);
+    /* If the url of the page is localhost:8080/home or just localhost:8080 it will load index.html */
+    if(req.url === '/home' || req.url === '/'){
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        let readStreamData = fs.createReadStream(__dirname + '/index.html');
+        readStreamData.pipe(res);
+    }
+    /* If the url of the page is localhost:8080/contact it will load contact.html */
+    else if(req.url === '/contact'){
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        let readStreamData = fs.createReadStream(__dirname + '/contact.html');
+        readStreamData.pipe(res);
+    }
+    /* If the url of the page is localhost:8080/json it will load json data */
+    else if(req.url === '/json'){
+        res.writeHead(200, {'Content-Type' : 'application/json'});
+        const myObj = {
+            fName: "Amit",
+            lName: "Mondal",
+            age: 22
+        };
+        res.end(JSON.stringify(myObj));
+    }
+    /* If the url of the page is localhost:8080/anything else it will load text which is passed from res.end("xyz") */
+    else {
+        res.writeHead(200, {'Content-Type' : 'text/plain'});
+        res.end("**** 404 -  Page Not Found ****");
+    }
+
+});
+server.listen(8080);
+console.log("started");
