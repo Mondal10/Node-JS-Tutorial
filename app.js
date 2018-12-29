@@ -212,38 +212,41 @@
  * Basic Routing
  */
 
-const http = require('http');
-const fs = require('fs');
-const server = http.createServer((req,res) => {
-    console.log(`URL of the page: ${req.url}`);
-    /* If the url of the page is localhost:8080/home or just localhost:8080 it will load index.html */
-    if(req.url === '/home' || req.url === '/'){
-        res.writeHead(200, {'Content-Type' : 'text/html'});
-        let readStreamData = fs.createReadStream(__dirname + '/index.html');
-        readStreamData.pipe(res);
-    }
-    /* If the url of the page is localhost:8080/contact it will load contact.html */
-    else if(req.url === '/contact'){
-        res.writeHead(200, {'Content-Type' : 'text/html'});
-        let readStreamData = fs.createReadStream(__dirname + '/contact.html');
-        readStreamData.pipe(res);
-    }
-    /* If the url of the page is localhost:8080/json it will load json data */
-    else if(req.url === '/json'){
-        res.writeHead(200, {'Content-Type' : 'application/json'});
-        const myObj = {
-            fName: "Amit",
-            lName: "Mondal",
-            age: 22
-        };
-        res.end(JSON.stringify(myObj));
-    }
-    /* If the url of the page is localhost:8080/anything else it will load text which is passed from res.end("xyz") */
-    else {
-        res.writeHead(200, {'Content-Type' : 'text/plain'});
-        res.end("**** 404 -  Page Not Found ****");
-    }
+// const http = require('http');
+// const fs = require('fs');
+// const server = http.createServer((req,res) => {
+//     console.log(`URL of the page: ${req.url}`);
+//     /* If the url of the page is localhost:8080/home or just localhost:8080 it will load index.html */
+//     if(req.url === '/home' || req.url === '/'){
+//         res.writeHead(200, {'Content-Type' : 'text/html'});
+//         let readStreamData = fs.createReadStream(__dirname + '/index.html');
+//         readStreamData.pipe(res);
+//     }
+//     /* If the url of the page is localhost:8080/contact it will load contact.html */
+//     else if(req.url === '/contact'){
+//         res.writeHead(200, {'Content-Type' : 'text/html'});
+//         let readStreamData = fs.createReadStream(__dirname + '/contact.html');
+//         readStreamData.pipe(res);
+//     }
+//     /* If the url of the page is localhost:8080/json it will load json data */
+//     else if(req.url === '/json'){
+//         res.writeHead(200, {'Content-Type' : 'application/json'});
+//         const myObj = {
+//             fName: "Amit",
+//             lName: "Mondal",
+//             age: 22
+//         };
+//         res.end(JSON.stringify(myObj));
+//     }
+//     /* If the url of the page is localhost:8080/anything else it will load text which is passed from res.end("xyz") */
+//     else {
+//         res.writeHead(200, {'Content-Type' : 'text/plain'});
+//         res.end("**** 404 -  Page Not Found ****");
+//     }
 
-});
-server.listen(8080);
-console.log("started");
+/* what if there are multiple pages like this??? we can use npm package express */
+
+// });
+// server.listen(8080);
+// console.log("started");
+
