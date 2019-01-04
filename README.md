@@ -12,4 +12,8 @@ Basic Node JS tutorial
 <b>To run a JS file in node:</b> 
 - Open command-promt or terminal and run type ```$ node <filename>``` without the angular brackets
 
+<b><i>Note:</i></b>
+- Before running any file check your present working directory (you must be inside the 'basic' folder). To check you can use ```$ pwd``` command in your terminal.
+- Read the comments given inside each program.
+
 # Work in progress
