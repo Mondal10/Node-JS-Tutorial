@@ -1,4 +1,5 @@
 # Node-JS-Tutorial
+# Work in progress
 Basic Node JS tutorial
 
 <b>To install Node:</b> run following commands
@@ -11,6 +12,3 @@ Basic Node JS tutorial
 
 <b>To run a JS file in node:</b> 
 - Open command-promt or terminal and run type ```$ node <filename>``` without the angular brackets
-
-
-# Work in progress
